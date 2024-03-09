@@ -32,11 +32,12 @@
 \usepackage{pgfplots} % Used for plotting functions
 
 % Setting up the default image path
-\graphicspath{{./Images/}}
+\graphicspath{{../../../global-assets/images/}}
 
 % Implementing authro details
-\title{}
-\author{}
+\title{Lab Report number I - Title of the lab report\\
+	ENS203 - Electrical Circuits I}
+\author{Emre Arapcic-Uevak\\220302289}
 \date{}
 
 % Setting up the fancy page style
@@ -62,17 +63,43 @@
 
 
 \begin{document}
-	\maketitle
-	\vspace{5mm}
-	
-	\begin{abstract}
+	\begin{titlepage}
 		\begin{center}
-			\noindent abstract
+			\vspace*{\stretch{1}} % Add vertical space before the title
+
+			{\Large\bfseries Lab Report number 1 \\[0.5em] Resistance and Current Measurement\par}
+			\vspace{1cm} % Space between title and course title
+
+			{\large ENS203 – Electrical Circuits I\par}
+			\vspace{1cm} % Space between course title and your name/ID
+
+			{\large Emre Arapcic-Uevak \\ 220302289\par}
+			\vspace{1cm} % Space between your name/ID and assistant name
+
+			{\large Assistant: Adil Hasanbasic\par}
+			\vspace{\stretch{2}} % Variable vertical space between assistant name and bottom
+			\includegraphics[width=0.5\textwidth]{Logo.png}
+			\vspace{5mm}
+			
+			\textsc{\LARGE Internation University of Sarajevo}\\[1.5cm]
+			\textsc{\Large ENS203 - Electrical Circuits I}\\[0.5cm]
+			
+			\rule{\linewidth}{0.5mm} \\[0.4cm]
+			{ \huge \bfseries Lab Report number I - Title of the lab report}\\[0.4cm]
+			\rule{\linewidth}{0.5mm} \\[1.5cm]
+			
+			\vfill
+			
+			% Bottom of the page
+			{\large \today}
 		\end{center}
-	\end{abstract}
+	\end{titlepage}
+	\pagebreak
+
+	\tableofcontents
 	\pagebreak
 	
-	\tableofcontents
+	\listoffigures
 	\pagebreak
 	
 \end{document}
