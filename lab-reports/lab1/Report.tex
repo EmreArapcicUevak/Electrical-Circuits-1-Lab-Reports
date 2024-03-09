@@ -255,32 +255,48 @@
 						\label{fig:MeasuringUnknownResistors}
 					\end{figure}
 
-				After setting up the multimeter to measure resistance, and after making sure the probes were connected properly to the multimeter,
-				we measured the resistance of the first resistor to be $2.142\text{k}\Omega = 2142\Omega$. As we can see the tolerance of the resistor is $\pm 5\%$ (as shown by the golden ring).
+					After setting up the multimeter to measure resistance, and after making sure the probes were connected properly to the multimeter,
+					we measured the resistance of the first resistor to be $2.142\text{k}\Omega = 2142\Omega$. As we can see the tolerance of the resistor is $\pm 5\%$ (as shown by the golden ring).
 
-				\vspace{5mm}
+					\vspace{5mm}
 
-				Now we connected the resistors in series, and measured the voltage across the entire circuit and the voltage across each resistor.
-				\begin{figure}[h]
-					\centering
-						\begin{subfigure}[h]{0.25\textwidth}
-							\includegraphics[width=\textwidth]{./images/SimpleCircuitInSeries.jpeg}
-							\caption{Simple Circuit in series}
-							\label{sub-fig:SimpleCircuitInSeries}
-						\end{subfigure}
-						\hspace{0.5cm} % This is the gap between the images
-						\begin{subfigure}[h]{0.65\textwidth}
-							\includegraphics[width=\textwidth]{./images/MeasuringVoltageOfACircuit.jpeg}
-							\caption{Multimeter measuring voltage over a simple circuit of 3 resistors in series}
-							\label{sub-fig:MeasuringVoltageOfASimpleCircuit}
-						\end{subfigure}
+					Now we connected the resistors in series, and measured the voltage across the entire circuit and the voltage across each resistor.
+					\begin{figure}[h]
+						\centering
+							\begin{subfigure}[h]{0.25\textwidth}
+								\includegraphics[width=\textwidth]{./images/SimpleCircuitInSeries.jpeg}
+								\caption{Simple Circuit in series}
+								\label{sub-fig:SimpleCircuitInSeries}
+							\end{subfigure}
+							\hspace{0.5cm} % This is the gap between the images
+							\begin{subfigure}[h]{0.65\textwidth}
+								\includegraphics[width=\textwidth]{./images/MeasuringVoltageOfACircuit.jpeg}
+								\caption{Multimeter measuring voltage over a simple circuit of 3 resistors in series}
+								\label{sub-fig:MeasuringVoltageOfASimpleCircuit}
+							\end{subfigure}
 
-						\caption{Measuring voltage of a simple circuit}
-						\label{fig:MeasuringVoltageOfACircuit}
-				\end{figure}
+							\caption{Measuring voltage of a simple circuit}
+							\label{fig:MeasuringVoltageOfACircuit}
+					\end{figure}
 
-				As we can see the voltage across the entire circuit is $4.8\text{V}$, and the voltage of the power supply is set to be $5.0\text{V}$. The reason for this difference, as stated by the
-				lab assistatns, is that the power supply is not perfect and it has some internal resistance, which causes the voltage to drop when a load is connected to it, and the 
-				probes used for the multimeter also have some resistance, which causes the voltage to drop when the multimeter is connected to the circuit. Another reason for the voltage drop is the
-				inaccuracy of the multimeter, which is not perfect and has some tolerance same with the DC power supply.
+					As we can see the voltage across the entire circuit is $4.8\text{V}$, and the voltage of the power supply is set to be $5.0\text{V}$. The reason for this difference, as stated by the
+					lab assistatns, is that the power supply is not perfect and it has some internal resistance, which causes the voltage to drop when a load is connected to it, and the 
+					probes used for the multimeter also have some resistance, which causes the voltage to drop when the multimeter is connected to the circuit. Another reason for the voltage drop is the
+					inaccuracy of the multimeter, which is not perfect and has some tolerance same with the DC power supply. With this we conclude tasks with the DC power supply, parallel and series connection
+					of resistors, and measuring the voltage across the entire circuit. One small note is that unfortunately we did not save our images of the parallel connection of resistors but you will be
+					able to see a mixed connection when we get to the last task of the lab report.
+				
+				\subsubsection{Using and measuring the function generator}
+					We turned on the function generator and set it to produce a sin wave with 100 Hz, and we connected the output of the function generator to the oscilloscope, and we measured the signal as shown in \figref{fig:MeasuringSignalWithOscilloscope}.
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=0.7\textwidth]{./images/MeasuringSignalWithOscilloscope.jpeg}
+						\caption{Measuring signal with oscilloscope}
+						\label{fig:MeasuringSignalWithOscilloscope}
+					\end{figure}
+
+					This part was very brief since we did not need to set up manually the volts/div and time/div, since the oscilloscope was already set up to measure the
+					signal from the function generator. However in the future we were told that we would cover this in much more detail.
+
+				
 \end{document}
