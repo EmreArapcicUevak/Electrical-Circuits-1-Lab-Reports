@@ -30,6 +30,7 @@
 \usepackage{tcolorbox} % for adding colored text boxes
 \usepackage{bm} % Adding bold text to math inputs
 \usepackage{pgfplots} % Used for plotting functions
+\usepackage{subcaption} % Used for subfigures
 
 % Setting up the default image path
 \graphicspath{{../../global-assets/images/}}
@@ -60,6 +61,7 @@
 }
 
 % Custom commands
+\newcommand{\figref}[1]{Figure~\ref{#1}}
 
 
 \begin{document}
@@ -85,7 +87,7 @@
 			\textsc{\Large ENS203 - Electrical Circuits I}\\[0.5cm]
 			
 			\rule{\linewidth}{0.5mm} \\[0.4cm]
-			{ \huge \bfseries Lab Report number I - Title of the lab report}\\[0.4cm]
+			{ \huge \bfseries Lab Report number I - Getting on board}\\[0.4cm]
 			\rule{\linewidth}{0.5mm} \\[1.5cm]
 			
 			\vfill
@@ -102,4 +104,115 @@
 	\listoffigures
 	\pagebreak
 	
+	\section{Introduction}
+		\subsection{Background}
+			Get introduced to the laboratory equipment and learn how to measure resistance, voltage and current safely. Learn how to use breadboard to connect components together in series, parallel and mixed configurations. Learn how to use a multimeter to measure resistance, voltage and current.	
+		\subsection{Objective}
+			\begin{itemize}
+				\item Switch in DC power supply, and fix it to 5 V, then measure the 5 V using the multi-meter
+				\item When done switch off.
+				\item Switch on function generator, and fix it to produce sin wave with 100 Hz, show the signal on a oscilloscope
+				\item Switch off
+				\item Pick up two unknown resistors, measure them using the multi – meter
+				\item Connect them on bread board in series
+				\item Connect them on the bread board in parallel
+				\item Use more resistors and connect the following circuit on the bread board.
+				\begin{figure}[h]
+					\centering
+					\includegraphics[width=0.5\textwidth]{./images/Task8-Circuit.png}
+					\caption{Circuit to be connected on the bread board}
+					\label{fig:Task8-Circuit}
+				\end{figure}
+			\end{itemize}
+
+	\pagebreak
+	\section{Methods}
+		\subsection{Apparatus}
+			\begin{description}
+				\item[Breadboard]
+					also known as protoboard is a type of solderless electronic circuit board, where you can build electronic circuits without any soldering.
+					Its advantages that it is reusable and the circuits are easy to modify and rebuild. \figref{fig:breadboard} shows a part of a breadboard and how the pins are connected,
+					although there are many types of breadboards, the principle is the same.
+
+					\begin{figure}[h!]
+						\centering
+						\begin{subfigure}[h]{0.45\textwidth}
+							\includegraphics[width=\textwidth]{./images/Breadboard.png}
+							\caption{Physical breadboard}
+							\label{sub-fig:physical-breadboard}
+						\end{subfigure}
+						\hspace{0.5cm} % This is the gap between the images
+						\begin{subfigure}[h]{0.45\textwidth}
+							\includegraphics[width=\textwidth]{./images/Breadboard-Connections.png}
+							\caption{Breadboard connections}
+							\label{sub-fig:breadboard-connections}
+						\end{subfigure}
+
+						\caption{Breadboard and its connections}
+						\label{fig:breadboard}
+					\end{figure}
+
+					Every 5 holes in horizontal direction, which are marked with letters a,b,c,d,e or f,g,h,I,j represent a one connection point.
+					When we want to connect circuit elements we connect one terminal of each element in one of the 5 holes, and we connect another element’s terminal into another hole of the 5 to have two elements connected at one point.
+
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=0.7\textwidth]{./images/SchemeDiagramOnABreadboard.png}
+						\caption{Scheme diagram on a breadboard}
+						\label{fig:SchemeDiagramOnABreadboard}
+					\end{figure}
+
+				\item[Multi-meter] used to measure electrical quantities
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=0.5\textwidth]{./images/MultiMeters.jpeg}
+						\caption{Multi-meters}
+						\label{fig:MultiMeters}
+					\end{figure}
+
+				\pagebreak
+
+				\item[DC power supply] used to provide a constant voltage
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=0.5\textwidth]{./images/DC-PowerSupply.jpeg}
+						\caption{DC power supply}
+						\label{fig:DCPowerSupply}
+					\end{figure}
+				\item[Function generator] used to produce a signal
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=0.5\textwidth]{./images/FunctionGenerator.jpeg}
+						\caption{Function generator}
+						\label{fig:FunctionGenerator}
+					\end{figure}
+
+				\item[Oscilloscope] used to show an signal
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=0.5\textwidth]{./images/Oscilloscope.jpeg}
+						\caption{Oscilloscope}
+						\label{fig:Oscilloscope}
+					\end{figure}
+
+				\pagebreak
+
+				\item[Probes] used to measure voltage
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=\textwidth]{./images/Probe.jpeg}
+						\caption{Probes}
+						\label{fig:Probes}
+					\end{figure}
+
+				\pagebreak
+				\item[Resistors] are used to control the current flow in circuits, they are mainly made of compost materials and their values which are given in Ohms can be found from color code (bands) on the resistor or by measuring the value of the resistance using Ohm-meter.
+					Resistors and color code are shown in \figref{fig:ResistorColorCode}.
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=\textwidth]{images/ResistorColorCode.png}
+						\caption{Resistor color code table}
+						\label{fig:ResistorColorCode}
+					\end{figure}
+			\end{description}
 \end{document}
