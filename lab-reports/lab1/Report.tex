@@ -215,4 +215,72 @@
 						\label{fig:ResistorColorCode}
 					\end{figure}
 			\end{description}
+	
+	\pagebreak
+			\subsection{Procedure}
+				To achive all of our goals we need to follow the following steps:
+				\begin{enumerate}
+					\item Switch in DC power supply, and fix it to 5 V, then measure the 5 V using the multi-meter
+					\item When done switch off.
+					\item Switch on the function generator, and fix it to produce sin wave with 100 Hz
+					\item Measure and show the signal via a oscilloscope
+					\item Switch them both off
+					\item Pick up two unknown resistors, measure them using the multi–meter
+					\item Connect them on bread board in series
+					\item Connect them on the bread board in parallel
+					\item Use more resistors and connect the circuit as shown in \figref{fig:Task8-Circuit}
+				\end{enumerate}
+
+				\subsubsection{Turning on the DC power supply}
+					Here is a list of steps followed to turn on the DC power supply safely in the laboratory:
+					\begin{enumerate}
+						\item Connect the power supply to the power source
+						\item Call an assistant to check the connections
+						\item Turn on the power supply with the assistans approval
+						\item Set the voltage to 5V
+						\item Turn off the power supply
+					\end{enumerate}
+
+					Before measuring the voltage with the multi-meter, we decided to take some resisotrs and make a simple circuit of 3 resistors in a series connection and measure the voltage across the entire
+					circuit and the voltage across each resistor.
+				
+				\pagebreak
+
+				\subsubsection{Constructing the series circuit}
+					We took 3 identical resistors, which were labaled to be $2200\Omega$ with some tolerance, and to be sure we measured them using a multimeter as can be seen at \figref{fig:MeasuringUnknownResistors}.
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[width=0.35\textwidth]{./images/MeasuringUnknownResistors.jpeg}
+						\caption{Measuring unknown resistors}
+						\label{fig:MeasuringUnknownResistors}
+					\end{figure}
+
+				After setting up the multimeter to measure resistance, and after making sure the probes were connected properly to the multimeter,
+				we measured the resistance of the first resistor to be $2.142\text{k}\Omega = 2142\Omega$. As we can see the tolerance of the resistor is $\pm 5\%$ (as shown by the golden ring).
+
+				\vspace{5mm}
+
+				Now we connected the resistors in series, and measured the voltage across the entire circuit and the voltage across each resistor.
+				\begin{figure}[h]
+					\centering
+						\begin{subfigure}[h]{0.25\textwidth}
+							\includegraphics[width=\textwidth]{./images/SimpleCircuitInSeries.jpeg}
+							\caption{Simple Circuit in series}
+							\label{sub-fig:SimpleCircuitInSeries}
+						\end{subfigure}
+						\hspace{0.5cm} % This is the gap between the images
+						\begin{subfigure}[h]{0.65\textwidth}
+							\includegraphics[width=\textwidth]{./images/MeasuringVoltageOfACircuit.jpeg}
+							\caption{Multimeter measuring voltage over a simple circuit of 3 resistors in series}
+							\label{sub-fig:MeasuringVoltageOfASimpleCircuit}
+						\end{subfigure}
+
+						\caption{Measuring voltage of a simple circuit}
+						\label{fig:MeasuringVoltageOfACircuit}
+				\end{figure}
+
+				As we can see the voltage across the entire circuit is $4.8\text{V}$, and the voltage of the power supply is set to be $5.0\text{V}$. The reason for this difference, as stated by the
+				lab assistatns, is that the power supply is not perfect and it has some internal resistance, which causes the voltage to drop when a load is connected to it, and the 
+				probes used for the multimeter also have some resistance, which causes the voltage to drop when the multimeter is connected to the circuit. Another reason for the voltage drop is the
+				inaccuracy of the multimeter, which is not perfect and has some tolerance same with the DC power supply.
 \end{document}
