@@ -31,6 +31,7 @@
 \usepackage{bm} % Adding bold text to math inputs
 \usepackage{pgfplots} % Used for plotting functions
 \usepackage{subcaption} % Used for subfigures
+\usepackage[siunitx]{circuitikz} % Used for drawing circuits
 
 % Setting up the default image path
 \graphicspath{{../../global-assets/images/}}
@@ -261,6 +262,20 @@
 					\vspace{5mm}
 
 					Now we connected the resistors in series, and measured the voltage across the entire circuit and the voltage across each resistor.
+					\begin{figure}[h!]
+						\centering
+						\begin{circuitikz}
+							\draw 
+							(0,0) to[V, v=$5V$] (0,2) % The voltage source
+							to[R, l=$R_1$] (2,2) % First resistor
+							to[R, l=$R_2$] (2,0) % Second resistor
+							to[R, l=$R_3$] (0,0); % Third resistor
+						\end{circuitikz}
+						\caption{Circuit scheme with three resistors in series connected to a 5V voltage source.}
+						\label{fig:series_circuit}
+					\end{figure}
+
+					\pagebreak
 					\begin{figure}[h]
 						\centering
 							\begin{subfigure}[h]{0.25\textwidth}
@@ -286,6 +301,7 @@
 					of resistors, and measuring the voltage across the entire circuit. One small note is that unfortunately we did not save our images of the parallel connection of resistors but you will be
 					able to see a mixed connection when we get to the last task of the lab report.
 				
+				\pagebreak
 				\subsubsection{Using and measuring the function generator}
 					We turned on the function generator and set it to produce a sin wave with 100 Hz, and we connected the output of the function generator to the oscilloscope, and we measured the signal as shown in \figref{fig:MeasuringSignalWithOscilloscope}.
 					\begin{figure}[h!]
