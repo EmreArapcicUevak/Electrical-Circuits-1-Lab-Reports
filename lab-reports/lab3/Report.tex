@@ -99,7 +99,10 @@
 	
 	\listoffigures
 	\pagebreak
-	
+
+	\listoftables	
+	\pagebreak 
+
 	\section{Objective}
 		The objective of this lab is to understand Kirchhoff's laws and how they can be applied to series and parallel circuits.
 		We will build three different circuits in this lab and try to show the validity of Kirchhoff's laws.
@@ -352,4 +355,100 @@
 
 			Since this is a parallel connection the voltage drop on all the resistors should be the same as the voltage of the power source.
 		\pagebreak
+
+		\section{Circuit 3}
+			\begin{figure}[h!]
+				\centering
+				\begin{circuitikz}
+					\draw (0,0)
+					to[V, V=\SI{5}{V}, invert] (0,4) % Voltage source
+					to[R, l=$R_1$, a=\SI{100}{\ohm}] (4,4) -- (4,2) % R2
+					to[R, l=$R_3$, a=\SI{10}{k\ohm}] (4,0) % R3
+					(4,2) -- (2,2) to[R, l=$R_2$, a=\SI{1}{k\ohm}] (2,0)
+					(4,0) -- (0,0)
+					; % R4
+				\end{circuitikz}
+				\caption{Basic circuit with resistors $R_1$, $R_2$, and $R_3$ in series.}
+				\label{fig:basic-circuit}
+			\end{figure}
+
+			\subsection{Objectives}
+				\begin{itemize}
+					\item Make the circuit shown in Figure \ref{fig:basic-circuit}.
+					\item Measure the current through each resistor.
+				\end{itemize}
+
+			\subsection{Making the circuit}
+				To make this circuit we started off with resistor 1 and connected it to the positive terminal of the voltage source, it's other terminal was connected to
+				the same column as the terminals from resistor 2 and 3, which after that were connected to another shared column which was connected to the negative terminal of the voltage source.
+				To measure the current through each resistor, we connected the multimeter in series with the resistor and measured the current.
+				When we were in the process of doing these measurements to measure the current going through R1 we connected the positive probe of the multimeter to the positive 
+				terminal of the voltage source and the negative probe to the terminal of the resistor which was previously connected to the positive terminal of the voltage source, as can be seen in Figure \ref{fig:CurrentR1Circ3}.
+				For the other 2 resistors we disconnected one of them from the shared column and connected the multimeter to the shared column and the terminal of the resistor that was disconnected, as can be seen in Figure \ref{fig:CurrentR23Circ3}.
+
+				\begin{figure}[h!]
+					\centering
+					\begin{subfigure}{.45\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{images/CurrentR2Circ3.jpeg}
+						\caption{Current through resistor $R_2$}
+						\label{subfig:CurrentR2Circ3}		
+					\end{subfigure}
+					\begin{subfigure}{.45\textwidth}
+						\centering
+						\includegraphics[width=\textwidth]{images/CurrentR3Circ3.jpeg}
+						\caption{Current through resistor $R_3$}
+						\label{subfig:CurrentR3Circ3}
+					\end{subfigure}
+					\caption{Current through resistor $R_2$ and $R_3$}
+					\label{fig:CurrentR23Circ3}
+				\end{figure}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=.5\textwidth]{images/CurrentR1Circ3.jpeg}
+					\caption{Current through resistor $R_1$}
+					\label{fig:CurrentR1Circ3}
+				\end{figure}
+			\pagebreak
+
+		\subsection{Evaluation KCL}
+			To evaluate Kirchhoff's Current Law, we measured the current through each resistor and now we will compare the sum of the currents.
+			If we pay close attention the current going through resistor $R_1$ is entering a node where it later on branches off into $R_2$ and $R_3$.
+			This means that the current going through $R_1$ should be equal to the sum of the currents going through $R_2$ and $R_3$.
+
+			\begin{table}[h!]
+				\centering
+				\begin{tabular}{@{}l|S@{}} % l for left, S for siunitx number column
+					\toprule
+					{Component} & {Current (\si{\milli\ampere})} \\
+					\midrule
+					$R_1$ & 5.00 \\ \hline
+					$R_2$ & 4.60 \\ \hline
+					$R_3$ & 0.45 \\ \hline
+					\bottomrule
+				\end{tabular}
+				\caption{Current through each resistor}
+				\label{tab:circ3Currents}
+			\end{table}
+
+			As we can see the current through the resistor $R_1$ is 5.00 mA, let's denote this current as $I_1$, the current through the resistor $R_2$ is 4.60 mA, let's denote it
+			as $I_2$, and the current through the resistor $R_3$ is 0.45 mA, denoted by $I_3$.
+			By applying Kirchhoff's Current Law, we can see that $I_1 = I_2 + I_3$.
+			By looking at the values in Table \ref{tab:circ3Currents} we can see that $5.00 \approx 4.60 + 0.45$ which is true.
+			The reason for slight overshooting is due to the fact that the multimeter isn't the most precise tool for measuring current.
+			\pagebreak
+
+	\section{Conclusion}
+		In this lab, we built three different circuits to demonstrate Kirchhoff's laws. 
+		We built a simple LED circuit to demonstrate Kirchhoff's Voltage Law. 
+		We then built a circuit with resistors in parallel to measure the voltage across each resistor. 
+		Finally, we built a circuit with resistors in series and parallel to measure the current through each resistor and validate Kirchhoff's Current Law.
+		We successfully demonstrated Kirchhoff's laws in each circuit and learned how to apply them to different circuit configurations.
+
+	\section{References}
+		\begin{itemize}
+			\item All images were taken by the authors.
+			\item All measurements were taken by the authors.
+			\item Current book
+		\end{itemize}
 \end{document}
