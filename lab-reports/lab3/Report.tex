@@ -35,6 +35,7 @@
 \usepackage{caption} % For adding captions to images
 \usepackage{siunitx} % Add this line to import the siunitx package
 \usepackage{booktabs} % For prettier tables
+\usepackage{subcaption} % For subfigures
 
 % Setting up the default image path
 \graphicspath{{../../global-assets/images/}}
@@ -207,8 +208,148 @@
 				\item To measure the voltage drop across the LED.
 				\item To measure the voltage drop across the resistor.
 				\item Ensure that the sum of the voltage drops is equal to the voltage of the power supply, hence validating Kirchhoff's Voltage Law.
+				\item Change the voltage source and see what happense to the LED
+				\item Change the resistance and see what happense to the LED
 			\end{itemize}
 
 		\subsection{Making the circuit}
+			This is a pretty simple circuit to make it all we did was to take a resistor and put in on one of the positive pins on the breadboard and then take the LED,
+			put it's anode to be on the same column on the breadboard as the resistor it self and it's cathode we connected to the negative probe of the voltage source.
+			You can see the above mentioned circuit on Figure \ref{fig:Physical_LED_Circ}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width = .3\textwidth]{images/Circuit1.jpeg}
+				\caption{Simple LED circuit made on the breadboard}
+				\label{fig:Physical_LED_Circ}
+			\end{figure}
+		\pagebreak
+
+		\subsection{Demonstrating \emph{KVL}}
+			KVL states that the sum of the voltage drops around a closed loop is equal to zero. 
+			In this circuit, we have a single loop, so the sum of the voltage drops across the LED and the resistor should be equal to the voltage of the power supply.
+			We measured the voltage drop across the LED and the resistor using a multimeter and compared the sum to the voltage of the power supply.
+
 			
+			\begin{figure}[h!]
+				\centering
+				\begin{subfigure}[b]{0.35\textwidth}
+					\includegraphics[width=\textwidth]{./images/Circ1_VDrop_LED.jpeg}
+					\caption{Voltage drop on the LED}
+					\label{sub-fig:VDropLEDCirc1}	
+				\end{subfigure}
+				\hspace{0.1\textwidth} % This is the gap between the images
+				\begin{subfigure}[b]{0.35\textwidth}
+					\includegraphics[width=\textwidth]{./images/Circ1_VDrop_Resistor.jpeg}
+					\caption{Voltage drop on the resistor}
+					\label{sub-fig:VDropResistorCirc1}
+				\end{subfigure}
+				\caption{Voltage drop across the resistor and the LED}
+				\label{fig:circ1VDropResistorAndLED}
+			\end{figure}
+
+			As we can see the voltage drop across the resistor and the LED are 2.988V and 2.119V respectively. 
+			When we sum these two values we get 5.107V which is equal to the voltage of the power supply.
+			One quick note we did say that we were going to set the voltage source to 5V but , as will be shown in Figure \ref{fig:VoltageSourceCirc1},
+			the voltage source isn't the most precise
+
+			\begin{table}[h!]
+				\centering
+				\begin{tabular}{@{}l|S@{}} % l for left, S for siunitx number column
+					\toprule
+					{Component} & {Voltage Drop (\si{\volt})} \\
+					\midrule
+					LED & 2.119 \\ \hline
+					Resistor & 2.988 \\ \hline
+					\textbf{Total} & \textbf{5.107} \\
+					\bottomrule
+				\end{tabular}
+				\caption{Voltage drops across the LED and the resistor}
+				\label{tab:circ1VDrops}
+			\end{table}
+
+			\pagebreak
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[height = 0.35\textheight]{images/Circ1_VDrop_Circ.jpeg}
+				\caption{Voltage of the source}
+				\label{fig:VoltageSourceCirc1}
+			\end{figure}
+
+			Here as we mentioned before we measured the voltage of the course and got around 5.1V which is close to the 5V that we set it to be.
+			Of course this isnt a perfect measurement but it is close enough to show that the voltage source is equal to the sum of the voltage drops across the LED and the resistor,
+			hence validating Kirchhoff's Voltage Law.
+
+		\subsection{Changing the voltage source and resistance}
+			Since we have already covered this in the previous lab report we will not be covering this in this lab report.
+			If you are interested in seeing how the LED behaves when the voltage source is changed or the resistance is changed you can check out the previous lab report.
+	
+	\pagebreak
+
+	\section{Circuit 2}
+		\begin{figure}[h!]
+			\centering
+			\begin{circuitikz}[scale=0.8, transform shape]
+				\draw
+				(0,0) to[V, V=\SI{5}{V}] (0,2) -- (2,2) % R10
+				(2,2) to[R, l=R3, -*] (2,0)
+				(3, 2)to[R, l=R2, -*] (3,0) % R9
+				(4,2) to[R, l=R1] (4,0) % R8
+				-- (0,0)
+				(2, 2) -- (4, 2)
+				;
+			\end{circuitikz}
+			\caption{Circuit with resistors in parallel}
+			\label{fig:parallel-resistors}
+		\end{figure}
+
+		\subsection{Objectives}
+			\begin{itemize}
+				\item Make the circuit shown in Figure \ref{fig:parallel-resistors}.
+				\item Measure the voltage across each resistor.
+			\end{itemize}
+
+		\subsection{Making the circuit}
+			To make this circuit we took 3 resistors and connected them in parallel. 
+			We then connected the positive terminal of the voltage source to a terminal of the resistors and the negative terminal of the voltage source to the opposite terminal of the resistors.
+			You can see the above mentioned circuit on Figure \ref{fig:Physical_Parallel_Circ}
+
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width = .3\textwidth]{images/Circuit2.jpeg}
+				\caption{Parallel resistors circuit made on the breadboard}
+				\label{fig:Physical_Parallel_Circ}
+			\end{figure}
+
+		
+			\pagebreak
+		\subsubsection{Measuring the voltage drop on resistor R1}
+			To measure the voltage drop across resistor R1, we connected the multimeter in parallel with the resistor and measured the voltage.
+			You can see the circuit diagram in Figure \ref{fig:VDropR1Circ2} and the physical setup in Figure \ref{fig:VDropR1Circ2Physical}.
+
+			\begin{figure}[h!]
+				\centering
+				\begin{circuitikz}[scale=0.8, transform shape]
+							\draw
+							(0,0) to[V, V=\SI{5}{V}] (0,2) -- (2,2) % R10
+							(2,2) to[R, l=R3, -*] (2,0)
+							(3, 2)to[R, l=R2, -*] (3,0) % R9
+							(4,2) to[R, l=R1] (4,0) % R8
+							-- (0,0)
+							(2, 2) -- (4, 2)
+							(4,2) -- (5.2,2) to[rmeter, t=V] (5.2,0) -- (4,0)  % Voltmeter
+							;
+					\end{circuitikz}
+				\caption{Voltage drop across resistor R1 Diagram}
+				\label{fig:VDropR1Circ2}
+			\end{figure}
+
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width = .3\textwidth]{images/MeasuringVDropCirc2.jpeg}
+				\caption{Voltage drop across resistor R1}
+				\label{fig:VDropR1Circ2Physical}
+			\end{figure}
+
+			Since this is a parallel connection the voltage drop on all the resistors should be the same as the voltage of the power source.
+		\pagebreak
 \end{document}
