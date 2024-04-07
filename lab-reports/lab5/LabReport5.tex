@@ -1,4 +1,8 @@
 \documentclass[a4paper, 10pt]{article}
+\usepackage{pgfplots} % Used for plotting functions
+
+\pgfplotsset{compat=1.18} % Add this line to set the compatibility version
+
 
 \usepackage[margin = 1in]{geometry} % for spacing around
 \usepackage{graphicx} % for including images in your pdfs
@@ -30,6 +34,9 @@
 \usepackage{tcolorbox} % for adding colored text boxes
 \usepackage{bm} % Adding bold text to math inputs
 \usepackage{pgfplots} % Used for plotting functions
+\usepackage{booktabs} % For prettier tables
+\usepackage{subcaption} % For subfigures
+\usepackage{siunitx} % Add the siunitx package for number column alignment
 
 % Setting up the default image path
 \graphicspath{{../../global-assets/images/}}
@@ -97,4 +104,106 @@
 	\listoftables	
 	\pagebreak 
 	
+	\section{Objective}
+		\subsection{Wheatstone}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=0.5\textwidth]{./images/WheatstoneBridge.png}
+				\caption{Wheatstone Bridge}
+				\label{fig:wheatstone}
+			\end{figure}
+
+			The wheatstone bridge is a circuit that is used to measure an unknown resistance. 
+			The circuit consists of four resistors, two of which are known, 1 variable resistor, and 1 unknown resistor.
+			The circuit is balanced when the voltage between the two nodes is zero. 
+			When the circuit is balanced, the ratio of the two known resistors is
+			equal to the ratio of the two unknown resistors, or in other words 
+			\begin{equation}
+				\frac{R_1}{R_2} = \frac{R_3}{R_x}
+			\end{equation}
+			then we know that $V_D = V_B$, so the potential difference between the two nodes, $V_{DB}$, is zero.
+
+			In today's lab, we will be using the wheatstone bridge and a multimeter to see when the bridge
+			is balanced.
+
+		\subsection{Apparatus}
+			\begin{itemize}
+				\item Multimeter
+				\item Potenciometer
+				\item Resistors
+				\item DC Power Supply
+				\item Breadboard
+			\end{itemize}
+
+			\pagebreak
+			\subsubsection{DC Power Supply}
+				Used to provide a constant voltage
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.5\textwidth]{./images/DC-PowerSupply.jpeg}
+					\caption{DC power supply}
+					\label{fig:DCPowerSupply}
+				\end{figure}
+
+			\subsubsection{Breadboard}
+				A breadboard is a construction base for prototyping of electronics.A breadboard consists of plastic block holding a matrix of electrical sockets of a size suitable for gripping thin connecting wire, 
+				component wires or the pins of transistors and integrated circuits (ICs). The sockets are connected inside the board, usually in rows of five sockets.
+
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.5\textwidth]{images/breadboard.jpeg}
+					\caption{A breadboard}
+					\label{fig:breadboard}
+				\end{figure}
+			
+			\pagebreak
+			\subsubsection{Resistors}
+				As stated before we needed 3 resistors for this lab report so we took 3 resistors with the proper colour code values and then we measured them and marked them.
+
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.35\textwidth]{images/ResistorColorCode.png}
+					\caption{Resistors Color Table}
+					\label{fig:ResistorsColorTable}
+				\end{figure}
+
+	
+				\begin{table}[h!]
+					\centering
+					\begin{tabular}{@{}l|S|S@{}} % l for left, S for siunitx number column
+						\toprule
+						{Resistor} & {Expected Value (\si{\ohm})} & {Measured Value (\si{\ohm})} \\
+						\midrule
+						$R_1$ & 1000 & 988 \\
+						$R_3$ & 2200 & 2142 \\
+						$R_x$ & 2200 & 2169 \\
+						\bottomrule
+					\end{tabular}
+					\caption{Expected and Measured Resistance Values}
+					\label{tab:resistors}
+				\end{table}
+
+			\pagebreak
+			\subsubsection{Multimeter}
+				The multimeter is a versatile tool used for measuring various electrical quantities. In this lab, we will use it to measure the voltage drops across components, the currents through branches and components, and the resistance of resistors.
+				To measure voltage drops, connect the multimeter in parallel across the component of interest. Set the multimeter to the voltage measurement mode and select an appropriate range.
+				To measure currents, connect the multimeter in series with the branch or component. Set the multimeter to the current measurement mode and select an appropriate range.
+				To measure resistance, disconnect the resistor from the circuit. Connect the multimeter probes to the resistor terminals. Set the multimeter to the resistance measurement mode and select an appropriate range.
+
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[height = 0.3\textheight]{images/Multimeter.jpeg}
+					\caption{Multimeter}
+					\label{fig:multi_meter}
+				\end{figure}
+			
+			\subsubsection{Potentiometer}
+				A potentiometer is a three-terminal resistor with a sliding ,or rotating, contact that forms an adjustable voltage divider as seen in Figure \ref{fig:potentiometer}.
+				If only two terminals are used, one end and the wiper, it acts as a variable resistor.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[width=0.5\textwidth]{images/Potentiometer.png}
+					\caption{Potentiometer}
+					\label{fig:potentiometer}
+				\end{figure}
 \end{document}
