@@ -206,4 +206,85 @@
 					\caption{Potentiometer}
 					\label{fig:potentiometer}
 				\end{figure}
+
+	\pagebreak
+	\section{Procedure}
+		\begin{enumerate}
+			\item Connect the circuit as shown in Figure \ref{fig:wheatstone}.
+			\item Set the power supply to 12V.
+			\item Adjust the potentiometer and measure the voltage difference of the two nodes.
+		\end{enumerate}
+
+		\subsection{Making the Circuit}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=0.5\textwidth]{images/Circuit.jpeg}
+				\caption{Circuit}
+				\label{fig:circuit}
+			\end{figure}
+
+			As stated before, we connected the circuit as shown in Figure \ref{fig:circuit}.
+			We took two $2.2 k\si{\ohm}$ resistors and connected them in series to form one branch,
+			and then we took the $1 k\si{\ohm}$ resistor and connected it in series with the potentiometer.
+			We connected one pin of the potentiometer to the $1 k\si{\ohm}$ resistor and the 
+			wiper to the $2.2 k\si{\ohm}$ resistor on the other branch effictively creating a wheatstone bridge.
+			As we stated before in the Aparature subsection, if we just connect the potentiometer using only one
+			of it it's pins and the wiper, we can use it as a variable resistor. Now all that is left is to connect
+			one of the resistors to the power supply and the other to the ground, making sure that
+			either the 2.2 $k$\si{\ohm} resistor or the potentiometer is connected to the ground,
+			and the other two to the power supply.
+			
+		\subsection{Calculation}
+			To calculate $V_{db}$ first we have to calculate $V_{d}$ and $V_{b}$.
+			Luckly we have a tool for calculating the voltage drop across ressistors called the voltage dividor formula.
+			Using the voltage dividor formula we can calculate the voltage drop across the $2.2 k\si{\ohm}$ resistor,
+			which would give us the $V_b$, and then we can calculate the voltage drop across the $1 k\si{\ohm}$ resistor
+			which would give us the $V_d$. Then we can calculate the $V_{db}$ by subtracting $V_d$ from $V_b$.
+
+			\begin{align*}
+				V_{b} &= 12 \times \frac{R_x}{R_x + R_3} \\
+				V_{d} &= 12 \times \frac{R_2}{R_1 + R_2} \\
+				V_{db} &= V_{d} - V_{b}
+			\end{align*}
+
+			In our case we know what $R_x$ is, and that it is constant; so we have that $V_b$ is constant, and we can calculate it
+			\begin{equation*}
+				V_{b} = 12 \times \frac{2200}{2200 + 2200} = 6 V
+			\end{equation*}
+		
+		\pagebreak
+		\subsection{Measuring the Voltage}
+			To measure the voltage drop across the two nodes, we connected the multimeter in parallel with the two nodes.
+			We will just change the value of the potentiometer and measure the voltage drop across the two nodes,
+			one being the input of the potentiometer and the other being the input of the $2.2 k\si{\ohm}$ resistor $R_x$.
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[width=0.5\textwidth]{images/MeasuringVoltage.jpeg}
+				\caption{Measuring Voltage $V_{db}$}
+				\label{fig:multi_meter}	
+			\end{figure}
+
+		\subsection{Results}
+			Now that everything is explained, since they are way to many measurements we will not provide ALL the images
+			that there were to show but just the meaasurements and calculations that we did.
+
+			\begin{table}[ht]
+				\centering
+				\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+					\hline
+					R ($\Omega$) & 500 & 600 & 700 & 800 & 900 & 1000 & 1100 & 1200 & 1300 & 1400 & 1500 \\ \hline
+					$V_{ab}$ measured & -1.73 & -1.19 & -0.65 & -0.15 & 0.23 & 0.60 & 0.32 & 0.56 & 0.83 & 0.99 & 1.20 \\ \hline
+					$V_{ab}$ calculated & -2.0 & -1.5 & -1.06 & -0.67 & -0.32 & 0.00 & 0.29 & 0.55 & 0.78 & 1.00 & 1.20 \\ \hline
+				\end{tabular}
+				\caption{Measured and calculated values of $V_{ab}$ for varying R.}
+				\label{tab:my_label}
+			\end{table}
+
+			A quick note, whilst doing this lab we noticed that the potentiometer was not working properly, 
+			the wiper of the potentiometer was not making proper contact with the resistive material and was wobbly.
+			We tried to fix it but we could not, so we had switch the potentiometer, because of this we see that
+			the measured voltage decreases as expected from 500 to 800, but then it starts to increase again
+			up to 1000 and then here we swapped it for a better one where we started to see better results.
+			In reality the 800 \si{\ohm} resistance that we measured was actually something around 1000 \si{\ohm}.
+			Sadly due to the lack of time we were not able to measure the voltage drops with the new potentiometer.
 \end{document}
