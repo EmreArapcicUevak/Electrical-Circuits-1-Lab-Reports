@@ -292,5 +292,195 @@
 					\label{fig:jumper_wires}
 				\end{figure}
 
+				\pagebreak
+				\section{Analysis}
+					\subsection{Charging Time of Capacitor}
+						\subsubsection{Procedure}
+							\begin{enumerate}
+								\item Connect the circuit as shown in Figure \ref{fig:charging_circuit}.
+								\item Measure the resistance of the resistor using the multimeter.
+								\item Measure the capacitance of the capacitor using the multimeter.
+								\item Connect the power supply to the circuit.
+								\item Measure the voltage across the capacitor using the multimeter.
+								\item Record the voltage across the capacitor at regular intervals.
+								\item Repeat the experiment for different resistances.
+							\end{enumerate}
+
+							\begin{figure}[h!]
+								\centering
+								\includegraphics[width=0.5\textwidth]{./images/RC_Circuit.png}
+								\caption{Charging Circuit}
+								\label{fig:charging_circuit}
+							\end{figure}
+
+						\subsubsection{Connecting the Circuit}
+							\begin{figure}[h!]
+								\centering
+								\includegraphics[width=0.5\textwidth]{./images/Finished_RC_Circuit.JPG}
+								\caption{Finished Charging Circuit}
+								\label{fig:finished_charging_circuit}
+							\end{figure}
+
+							As we can see in Figure \ref{fig:finished_charging_circuit}, we have connected the circuit as 
+							shown in Figure \ref{fig:charging_circuit}, the only difference being that we
+							added a LED and a $100 \Omega$ resistor in parallel to the capacitor, but not fully connected;
+							this will be used to show the discharging of the capacitor in the next analysis.
+
+						\pagebreak
+						\subsubsection{Computing the Time Constants}
+							We can compute the time constant of the circuit using Equation \ref{eq:time_constant}.
+							\begin{equation*}
+								\tau = R \cdot C
+							\end{equation*}
+
+							We can compute the time constant for each resistor and capacitor combination.
+							\begin{table}[h!]
+								\centering
+								\begin{tabular}{|c|c|c|c|}
+									\hline
+									\textbf{Resistor ($\Omega$)} & \textbf{Capacitor ($\mu$F)} & \textbf{Time Constant (s)}\\
+									\hline
+									1000 & 1 & 0.001\\
+									10000 & 1 & 0.01\\
+									100000 & 1 & 0.1\\
+									\hline
+								\end{tabular}
+								\caption{Time Constants}
+								\label{table:time_constants}
+							\end{table}
+
+							As for the time it took the capacitor to charge, since it is very hard to measure the time it took for the capacitor to charge we can give ruff aproximations.
+							\begin{table}[h!]
+								\centering
+								\begin{tabular}{|c|c|c|c|}
+									\hline
+									\textbf{Resistor ($\Omega$)} & \textbf{Capacitor ($\mu$F)} & \textbf{Time to Charge (s)}\\
+									\hline
+									1000 & 1 & < 1 \\
+									10000 & 1 & < 1 \\
+									100000 & 1 & $\approx 1$ \\
+									\hline
+								\end{tabular}
+								\caption{Time to Charge}
+								\label{table:time_to_charge}
+							\end{table}
+
+						\subsubsection{Observing the discharge}
+							As we can see in Figure \ref{fig:finished_charging_circuit}, we have connected a LED and a $100 \Omega$ resistor in parallel to the capacitor.
+							When we disconnect the power supply, the capacitor will begin to discharge through the LED and resistor.
+							We can observe the discharge of the capacitor by measuring the voltage across the capacitor at regular intervals.
+
+							\begin{figure}[h!]
+								\centering
+								\includegraphics[width=0.5\textwidth]{./images/Discharging_Circuit.png}
+								\caption{Discharging Circuit}
+								\label{fig:discharging_circuit}
+							\end{figure}
+
+
+							As we can see in Figure \ref{fig:finished_charging_circuit}, we have connected the circuit as 
+							shown in Figure \ref{fig:discharging_circuit}, the only difference being that we
+							disconnected the power supply and connected the LED and resistor in parallel to the capacitor.
+
+							\vspace*{5mm}
+							One Interesting thing that we can observe is that the LED will light up when the capacitor is discharging, but then slowly turn off as the capacitor loses charge, however when the LED
+							turns off the capacitor will still have some charge left in it, this is because the LED that has been used in the lab has a forward voltage drop of $\approx$2.8V,
+							and the capacitor will discharge until the voltage across it is 2.1V.
+
+							\begin{figure}
+								\centering
+								\includegraphics[angle = -90 ,width=0.5\textwidth]{./images/DiodeCapacitorVoltage.png}
+								\caption{Diode's effect on Capacitor's Voltage}
+								\label{fig:diode_capacitor_voltage}
+							\end{figure}
+
+					\subsection{Capacitors in Series and Parallel}
+							
+						Our next task is to repeat the previous steps and analyse the difference connecting another capacitor in series and or in parallel to the first capacitor does.
+
+						\begin{figure}[h!]
+							\begin{subfigure}[b]{0.45\textwidth}
+								\centering
+								\includegraphics[width=0.8\textwidth]{./images/Capacitors_Parallel_Circuit.png}
+								\caption{Capacitors in parallel}
+								\label{fig:capacitors_in_parallel_circuit}
+							\end{subfigure}
+							\hspace*{0.1\textwidth}
+							\begin{subfigure}[b]{0.45\textwidth}
+								\centering
+								\includegraphics[width=0.8\textwidth]{./images/Capacitors_Series_Circuit.png}
+								\caption{Capacitors in series}
+								\label{fig:capacitors_in_series_circuit}
+							\end{subfigure}
+							\caption{Comparison of capacitors in parallel and series configurations}
+							\label{fig:capacitors_configurations}
+						\end{figure}
+					
+						Now for the implementation of these circuits.
+						\begin{figure}[h!]
+							\begin{subfigure}{0.45\textwidth}
+								\centering
+								\includegraphics[width=0.8\textwidth]{./images/CapacitorsRealParallel.JPG}
+								\caption{Capacitors in parallel}
+								\label{fig:finished_capacitors_parallel_circuit}
+							\end{subfigure}
+							\hspace*{0.1\textwidth}
+							\begin{subfigure}{0.45\textwidth}
+								\centering
+								\includegraphics[width=0.8\textwidth]{./images/CapacitorsRealSeries.JPG}
+								\caption{Capacitors in series}
+								\label{fig:finished_capacitors_series_circuit}
+							\end{subfigure}
+							\caption{Finished Capacitors Circuit}
+							\label{fig:finished_capacitors_circuit}	
+						\end{figure}
+
+						\pagebreak% Parallel Connection
+						\begin{tcolorbox}[title=Parallel Connection]
+						\[
+						\begin{aligned}
+							C_{\text{total}} &= C_1 + C_2 \\
+							&= 1 \, \mu\text{F} + 1 \, \mu\text{F} \\
+							&= 2 \, \mu\text{F}
+						\end{aligned}
+						\]
+						\end{tcolorbox}
 				
+						% Series Connection
+						\begin{tcolorbox}[title=Series Connection]
+						\[
+						\begin{aligned}
+							\frac{1}{C_{\text{total}}} &= \frac{1}{C_1} + \frac{1}{C_2} \\
+							\frac{1}{C_{\text{total}}} &= \frac{1}{1 \, \mu\text{F}} + \frac{1}{1 \, \mu\text{F}} \\
+							&= 1 \, \mu\text{F}^{-1} + 1 \, \mu\text{F}^{-1} \\
+							&= 2 \, \mu\text{F}^{-1} \\
+							C_{\text{total}} &= \frac{1}{2 \, \mu\text{F}} \\
+							&= 0.5 \, \mu\text{F}
+						\end{aligned}
+						\]
+						\end{tcolorbox}
+						
+
+						\vspace{10mm}
+						As we can see the total capacitance of the circuit when the capacitors are connected in parallel is 2$\mu$F, and when the capacitors are connected in series the total capacitance of the circuit is 0.5$\mu$F.
+						Another interesting fact is that when measuring the voltage of the capacitors in parallel, the voltage across each capacitor is the same, however when the capacitors are connected in series the voltage across each capacitor is different. \\
+
+						Another thing to note is that since the total Capacitance is lower in series it also means that it takes less time to charge but also it takes less time to discharge; meanwhile for the parallel configuration it takes more time to charge and discharge.
+						
+
+	\pagebreak
+	\section{Conclusion}
+		In this lab, we have analyzed the behavior of capacitors in DC circuits. 
+		We have measured the voltage across the capacitor and how long it takes to charge the capacitor depending on the resistance and capacitance of the circuit.\\
+
+		We have observed that the time it takes for a capacitor to charge and or discharge both depends on the resistance and capacitance of the circuit. 
+		The time constant of a circuit is the time it takes for the voltage across the capacitor to reach 63.2\% of the final voltage.\\
+
+		We have also observed that when capacitors are connected in parallel, the total capacitance of the circuit is the sum of the capacitances of the capacitors. 
+		When capacitors are connected in series, the total capacitance of the circuit is the reciprocal of the sum of the reciprocals of the capacitances of the capacitors.\\
+
+		We have also observed that when capacitors are connected in parallel, the voltage across each capacitor is the same. 
+		When capacitors are connected in series, the voltage across each capacitor is different.\\
+
+		Overall, we have learned how capacitors behave in DC circuits and how to analyze the behavior of capacitors in DC circuits.
 \end{document}
